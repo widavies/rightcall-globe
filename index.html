@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <meta content="utf-8" http-equiv="encoding">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100vh;
+    }
+
+    #globekit-container {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100vh;
+      position: relative;
+    }
+
+    #globekit-canvas {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="globekit-container">
+    <canvas id="globekit-canvas"></canvas>
+  </div>
+</body>
+<script type="module">
+  import { GlobeKitView, Icosphere } from "https://cdn.jsdelivr.net/npm/globekit-public@1.0.6";
+
+  const apiKey = "gk_75b504992dd66030289d18295bb2ce9f5b4ea73d3cf0877d367338ae19d80dc7b060c6e228dc82ad2700dbc09360d355712eff7fa74d27e2ede4bb3c74fb9479";
+  const options = {
+    apiKey: apiKey,
+    wasmPath: "https://cdn.jsdelivr.net/npm/globekit-public@1.0.6/gkweb_bg.wasm",
+  };
+
+  let canvas = document.getElementById('globekit-canvas');
+
+  let gkview = new GlobeKitView(canvas, options);
+
+  let icosphere = new Icosphere('https://github.githubassets.com/images/modules/site/home/secret-alert.webp');
+  gkview.addDrawable(icosphere, () => {
+    gkview.startDrawing();
+  });
+</script>
+
+</html>
