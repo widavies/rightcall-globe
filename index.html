@@ -44,14 +44,15 @@
   };
 
   let canvas = document.getElementById('globekit-canvas');
-  let background = new Background('https://github.com/widavies/rightcall-globe/raw/main/trans_background.png');
-  gkview.addDrawable(background);
   
   let gkview = new GlobeKitView(canvas, options);
 
   let icosphere = new Icosphere('https://raw.githubusercontent.com/widavies/rightcall-globe/010ac300155ae225349735d5f2c72d5e00a11ade/test_globe.jpg');
   gkview.addDrawable(icosphere, () => {
-    gkview.startDrawing();
+  let background = new Background('https://github.com/widavies/rightcall-globe/raw/main/trans_background.png');
+  gkview.addDrawable(background);
+  gkview.startDrawing();
+  
   });
 </script>
 
