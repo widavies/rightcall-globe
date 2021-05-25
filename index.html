@@ -35,7 +35,7 @@
   </div>
 </body>
 <script type="module">
-  import { GlobeKitView, Icosphere, Background } from "https://cdn.jsdelivr.net/npm/globekit-public@1.0.6";
+  import { GlobeKitView, Icosphere } from "https://cdn.jsdelivr.net/npm/globekit-public@1.0.6";
 
   const apiKey = "gk_75b504992dd66030289d18295bb2ce9f5b4ea73d3cf0877d367338ae19d80dc7b060c6e228dc82ad2700dbc09360d355712eff7fa74d27e2ede4bb3c74fb9479";
   const options = {
@@ -46,11 +46,11 @@
   let canvas = document.getElementById('globekit-canvas');
   
   let gkview = new GlobeKitView(canvas, options);
-
+  let background = new Background('https://github.com/widavies/rightcall-globe/raw/main/trans_background.png');
+  gkview.addDrawable(background);  
+  
   let icosphere = new Icosphere('https://raw.githubusercontent.com/widavies/rightcall-globe/010ac300155ae225349735d5f2c72d5e00a11ade/test_globe.jpg');
   gkview.addDrawable(icosphere, () => {
-  let background = new Background('https://github.com/widavies/rightcall-globe/raw/main/trans_background.png');
-  gkview.addDrawable(background);
   gkview.startDrawing();
   
   });
