@@ -56,8 +56,8 @@
   let canvas = document.getElementById('globekit-canvas');
   
   let gkview = new GlobeKitView(canvas, gkOptions);
-  const background = new Background('https://raw.githubusercontent.com/widavies/rightcall-globe/main/trans_background.png');
-  gkview.addDrawable(background);  
+  //const background = new Background('https://raw.githubusercontent.com/widavies/rightcall-globe/main/trans_background.png');
+  //gkview.addDrawable(background);  
   
   let icosphere = new Icosphere('https://raw.githubusercontent.com/widavies/rightcall-globe/010ac300155ae225349735d5f2c72d5e00a11ade/test_globe.jpg');
   gkview.addDrawable(icosphere, () => {
