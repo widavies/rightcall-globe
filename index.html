@@ -39,14 +39,21 @@
   import { GlobeKitView, Icosphere, PointGlobe, Points, Background, GKUtils} from "https://cdn.jsdelivr.net/npm/globekit-public@1.0.6";
 
   const apiKey = "gk_75b504992dd66030289d18295bb2ce9f5b4ea73d3cf0877d367338ae19d80dc7b060c6e228dc82ad2700dbc09360d355712eff7fa74d27e2ede4bb3c74fb9479";
-  const options = {
+  const gkOptions = {
     apiKey: apiKey,
     wasmPath: "https://cdn.jsdelivr.net/npm/globekit-public@1.0.6/gkweb_bg.wasm",
+    attributes: {
+      alpha: true,
+      attributes: {
+        alpha: ture,
+      },
+      clearColor: [0.0,0.0,0.0,0.0],
+    },
   };
 
   let canvas = document.getElementById('globekit-canvas');
   
-  let gkview = new GlobeKitView(canvas, options);
+  let gkview = new GlobeKitView(canvas, gkOptions);
   const background = new Background('https://raw.githubusercontent.com/widavies/rightcall-globe/main/trans_background.png');
   gkview.addDrawable(background);  
   
