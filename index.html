@@ -32,7 +32,16 @@
 </head>
 
 <body>
-  <div id="globekit-container" style = "background: transparent;">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100vh;
+      background: red;
+    }
+  </style>
+  <div id="globekit-container" style = "opacity: 0.0;">
     <canvas id="globekit-canvas"></canvas>
   </div>
 </body>
@@ -44,8 +53,10 @@
     apiKey: apiKey,
     wasmPath: "https://cdn.jsdelivr.net/npm/globekit-public@1.0.6/gkweb_bg.wasm",
     attributes: {
-      alpha: true,
-      
+      alpha: false,
+      attributes: {
+        alpha: true,
+      },
     clearColor: [0.0,0.0,0.0,0.0],
    },
   };
